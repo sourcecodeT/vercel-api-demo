@@ -1,4 +1,4 @@
-package api
+package app
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ type response struct {
 	Error interface{} `json:"error"`
 }
 
-func responseSuccess(w http.ResponseWriter, data interface{}) {
+func ResponseSuccess(w http.ResponseWriter, data interface{}) {
 	r := response{Data: data}
 
 	w.WriteHeader(http.StatusOK)
@@ -18,7 +18,7 @@ func responseSuccess(w http.ResponseWriter, data interface{}) {
 	json.NewEncoder(w).Encode(r)
 }
 
-func responseError(w http.ResponseWriter, code int, message string) {
+func ResponseError(w http.ResponseWriter, code int, message string) {
 	r := response{Error: message}
 
 	w.WriteHeader(code)

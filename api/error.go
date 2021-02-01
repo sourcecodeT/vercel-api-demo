@@ -1,7 +1,10 @@
 package api
 
-import "net/http"
+import (
+	"net/http"
+	"vercel-api-demo/app"
+)
 
 func ErrorHandler(w http.ResponseWriter, r *http.Request) {
-	responseError(w, http.StatusBadRequest, "demo bad request response!")
+	app.ResponseError(w, http.StatusBadRequest, "demo bad request response!")
 }
