@@ -34,6 +34,4 @@ func init() {
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	repo.Ping()
 	app.ResponseSuccess(w, "Hello world!")
-
-	defer repo.Disconnect()
 }
